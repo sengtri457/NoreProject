@@ -443,7 +443,7 @@ const Projects = () => {
         )}
       </AnimatePresence>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
