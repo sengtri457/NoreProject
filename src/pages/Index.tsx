@@ -6,6 +6,8 @@ import { ValuesSection } from "../components/sections/ValuesSection";
 import { CTASection } from "../components/sections/CTASection";
 import useLenis from "../hooks/useLenis";
 import About from "./About";
+import Contact from "./Contact";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const Index = () => {
   // Initialize smooth scrolling
@@ -19,10 +21,11 @@ const Index = () => {
         <About />
         <ValuesSection />
         <ProjectsSection />
-        
         <CTASection />
+        <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
