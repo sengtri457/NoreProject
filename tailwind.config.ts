@@ -35,6 +35,12 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        golden: {
+          DEFAULT: "hsl(38, 85%, 52%)",
+          light: "hsl(38, 80%, 60%)",
+          dark: "hsl(38, 90%, 45%)",
+          foreground: "hsl(0, 0%, 98%)",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
