@@ -6,56 +6,56 @@
 
 @layer base {
   :root {
-    /* Core architectural palette */
-    --background: 0 0% 4%;
-    --foreground: 40 20% 95%;
+    /* Core architectural palette - Light Mode */
+    --background: 0 0% 98%;
+    --foreground: 220 52% 15%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 40 20% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 52% 15%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 52% 15%;
 
-    /* Bronze accent - architectural warmth */
-    --primary: 38 72% 42%;
-    --primary-foreground: 0 0% 4%;
+    /* Blue accent - your primary color */
+    --primary: 220 52.38% 24.71%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 220 52% 15%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 38 72% 42%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 220 52.38% 24.71%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 38 72% 42%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 52.38% 24.71%;
 
     --radius: 0.25rem;
 
     /* Custom architectural tokens */
-    --ivory: 40 33% 96%;
-    --charcoal: 0 0% 4%;
-    --bronze: 38 72% 42%;
-    --bronze-light: 38 72% 52%;
-    --bronze-dark: 38 72% 32%;
-    --stone: 30 5% 45%;
-    --concrete: 0 0% 75%;
-    
+    --ivory: 0 0% 98%;
+    --charcoal: 220 52% 15%;
+    --blue: 220 52.38% 24.71%;
+    --blue-light: 220 52% 65%;
+    --blue-dark: 220 52% 18%;
+    --stone: 220 10% 55%;
+    --concrete: 220 10% 85%;
+
     /* Gradients */
-    --gradient-bronze: linear-gradient(135deg, hsl(38, 72%, 42%), hsl(38, 72%, 52%));
-    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 4%), hsl(0, 0%, 8%));
-    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(0, 0%, 4%, 0.9) 100%);
-    
+    --gradient-blue: linear-gradient(135deg, hsl(220, 52%, 24.71%), hsl(220, 52%, 35%));
+    --gradient-light: linear-gradient(180deg, hsl(0, 0%, 98%), hsl(220, 20%, 96%));
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(0, 0%, 98%, 0.9) 100%);
+
     /* Shadows */
-    --shadow-architectural: 0 30px 60px -12px hsl(0, 0%, 0%, 0.5);
-    --shadow-lift: 0 20px 40px -15px hsl(38, 72%, 42%, 0.3);
-    --shadow-subtle: 0 4px 20px -2px hsl(0, 0%, 0%, 0.4);
+    --shadow-architectural: 0 30px 60px -12px hsl(220, 52%, 24.71%, 0.15);
+    --shadow-lift: 0 20px 40px -15px hsl(220, 52%, 24.71%, 0.2);
+    --shadow-subtle: 0 4px 20px -2px hsl(220, 10%, 10%, 0.08);
 
     /* Animation timing */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -64,7 +64,23 @@
 
   .dark {
     --background: 0 0% 4%;
-    --foreground: 40 20% 95%;
+    --foreground: 220 52% 85%;
+
+    --card: 220 15% 8%;
+    --card-foreground: 220 52% 85%;
+
+    --primary: 220 52.38% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 220 52% 85%;
+
+    --muted: 220 10% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 220 52.38% 45%;
   }
 }
 
@@ -74,7 +90,8 @@
   }
 
   html {
-    scroll-behavior: auto; /* Lenis handles smooth scroll */
+    scroll-behavior: auto;
+    /* Lenis handles smooth scroll */
   }
 
   body {
@@ -82,7 +99,12 @@
     font-feature-settings: "ss01", "ss02", "cv01";
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold tracking-tight;
   }
 
@@ -93,9 +115,10 @@
 }
 
 @layer components {
+
   /* Architectural text styles */
   .heading-display {
-    @apply text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-semibold tracking-tighter leading-none;
+    @apply text-3xl md:text-7xl lg:text-8xl xl:text-6xl font-semibold tracking-tighter leading-none;
   }
 
   .heading-large {
@@ -175,7 +198,7 @@
     @apply overflow-hidden;
   }
 
-  .text-mask > * {
+  .text-mask>* {
     @apply block;
   }
 
@@ -190,8 +213,15 @@
   }
 
   @keyframes breathing {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.02);
+    }
   }
 
   /* Line draw animation */
@@ -201,8 +231,13 @@
   }
 
   @keyframes lineGrow {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
+    from {
+      transform: scaleY(0);
+    }
+
+    to {
+      transform: scaleY(1);
+    }
   }
 
   /* SVG stroke animation */
@@ -213,7 +248,9 @@
   }
 
   @keyframes strokeDraw {
-    to { stroke-dashoffset: 0; }
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 
   /* Wipe reveal */
@@ -223,7 +260,9 @@
   }
 
   @keyframes wipeIn {
-    to { clip-path: inset(0 0 0 0); }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
   }
 
   /* Ripple effect */
@@ -245,6 +284,7 @@
 }
 
 @layer utilities {
+
   /* Architectural transitions */
   .transition-architectural {
     transition: all 0.6s var(--ease-out-expo);
@@ -256,7 +296,7 @@
 
   /* Background patterns */
   .bg-grid {
-    background-image: 
+    background-image:
       linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;

@@ -1,11 +1,12 @@
-import { Header } from '../components/layout/Header';
-import { Footer } from '../components/layout/Footer';
-import { HeroSection } from '../components/sections/HeroSection';
-import { OverviewSection } from '../components/sections/OverviewSection';
-import { ProjectsSection } from '../components/sections/ProjectsSection';
-import { ValuesSection } from '../components/sections/ValuesSection';
-import { CTASection } from '../components/sections/CTASection';
-import useLenis from '../hooks/useLenis';
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
+import { HeroSection } from "../components/sections/HeroSection";
+import { OverviewSection } from "../components/sections/OverviewSection";
+import { ProjectsSection } from "../components/sections/ProjectsSection";
+import { ValuesSection } from "../components/sections/ValuesSection";
+import { CTASection } from "../components/sections/CTASection";
+import useLenis from "../hooks/useLenis";
+import About from "./About";
 
 const Index = () => {
   // Initialize smooth scrolling
@@ -17,6 +18,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <OverviewSection />
+        <About />
         <ProjectsSection />
         <ValuesSection />
         <CTASection />

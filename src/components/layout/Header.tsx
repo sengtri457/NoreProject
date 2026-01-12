@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 mix-blend-difference margin-bottom-8 bg-background/80 backdrop-blur-md border-b border-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-primary color margin-bottom-8 backdrop-blur-md "
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -28,11 +28,11 @@ export const Header = () => {
             className="flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-10 h-10 border border-foreground flex items-center justify-center">
-              <span className="text-xl font-bold text-foreground">A</span>
+            <div className="w-10 h-10 border border-white flex items-center justify-center">
+              <span className="text-xl font-bold text-white">NR</span>
             </div>
-            <span className="text-lg font-semibold tracking-tight text-foreground hidden md:block">
-              ATELIER
+            <span className="text-lg font-semibold tracking-tight text-white hidden md:block">
+              NOREA ARCHITECTURE
             </span>
           </motion.div>
         </Link>
@@ -41,11 +41,11 @@ export const Header = () => {
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link key={link.href} to={link.href} className="relative group">
-              <span className="text-sm font-medium tracking-wide text-foreground transition-colors group-hover:text-primary">
+              <span className="text-sm font-medium tracking-wide text-white transition-colors group-hover:text-white">
                 {link.label}
               </span>
               <motion.span
-                className="absolute -bottom-1 left-0 h-px bg-primary"
+                className="absolute -bottom-1 left-0 h-px bg-white"
                 initial={{ width: 0 }}
                 whileHover={{ width: "100%" }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}

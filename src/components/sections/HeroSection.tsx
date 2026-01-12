@@ -24,7 +24,7 @@ export const HeroSection = () => {
     >
       {/* Background Image with Scale and Drift */}
       <motion.div
-        className="absolute inset-0  "
+        className="absolute inset-0"
         style={{ scale: imageScale, x: imageX }}
       >
         <motion.img
@@ -36,23 +36,23 @@ export const HeroSection = () => {
           transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-blue-to-b from-background/60 via-background/40 to-background" />
       </motion.div>
 
       {/* Content */}
       <motion.div
-        className="relative z-10 container-architectural h-full flex flex-col justify-end pb-24 md:pb-32"
+        className="relative z-10 container-architectural h-full flex flex-col justify-center py-20 md:py-24"
         style={{ y: textY, opacity }}
       >
         {/* Label */}
         <TextReveal delay={0.3}>
-          <span className="label-uppercase mb-6 block">
+          <span className="label-uppercase mb-4 md:mb-6 block">
             Architecture & Design Studio
           </span>
         </TextReveal>
 
         {/* Main Heading */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <TextRevealByWord
             text="We Design Spaces"
             className="heading-display text-foreground"
@@ -67,7 +67,7 @@ export const HeroSection = () => {
 
         {/* Subheading */}
         <TextReveal delay={0.6}>
-          <p className="body-large max-w-xl mb-10">
+          <p className="body-large max-w-xl mb-8 md:mb-10">
             Transforming visionary concepts into architectural masterpieces that
             stand the test of time through innovation and precision.
           </p>
