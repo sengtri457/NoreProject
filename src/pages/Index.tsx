@@ -8,6 +8,7 @@ import useLenis from "../hooks/useLenis";
 import About from "./About";
 import Contact from "./Contact";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import Projects from "./Projects";
 
 const Index = () => {
   // Initialize smooth scrolling
@@ -20,7 +21,7 @@ const Index = () => {
         <HeroSection />
         <About />
         <ValuesSection />
-        <ProjectsSection />
+        <Projects />
         <CTASection />
         <Contact />
       </main>

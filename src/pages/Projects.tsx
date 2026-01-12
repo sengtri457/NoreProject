@@ -183,11 +183,11 @@ const Projects = () => {
           </div>
         </section>
 
-        {/* Projects Grid - Perfect Grid Layout like Reference */}
+        {/* Projects Grid - NO GAPS, Clean Minimal Design like Reference */}
         <section className="pb-20 md:pb-32">
-          <div className="container-architectural">
+          <div className="container-architectural px-0">
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0"
               layout
             >
               <AnimatePresence mode="popLayout">
@@ -195,159 +195,65 @@ const Projects = () => {
                   <motion.div
                     key={project.id}
                     layout
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
                     transition={{
-                      duration: 0.4,
-                      delay: index * 0.05,
+                      duration: 0.3,
+                      delay: index * 0.03,
                     }}
-                    className="group relative aspect-[4/3] overflow-hidden cursor-pointer border border-border/50"
+                    className="group relative aspect-[3/4] overflow-hidden cursor-pointer"
                     onClick={() => setSelectedProject(project)}
                   >
-                    {/* Background Image */}
+                    {/* Background Image - NO border between tiles */}
                     <div className="absolute inset-0">
-                      <motion.img
+                      <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover"
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                       />
                     </div>
 
-                    {/* Dark Overlay - Always visible but intensifies on hover */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"
-                      initial={{ opacity: 0.7 }}
-                      whileHover={{ opacity: 0.85 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    {/* Dark Overlay - ONLY appears on hover */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-500" />
 
-                    {/* Content Container */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
-                      {/* Top Section - Category & Type */}
-                      <motion.div
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: index * 0.05 + 0.1 }}
-                      >
-                        <div className="text-xs md:text-sm font-bold text-white/80 uppercase tracking-[0.2em] mb-2">
-                          {project.type} & Entertainment
-                        </div>
-                      </motion.div>
+                    {/* Content - Centered like reference image */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                      {/* Category - Top small text */}
+                      <div className="text-[10px] md:text-xs font-bold text-white/0 group-hover:text-white/90 uppercase tracking-[0.3em] mb-3 transition-all duration-500">
+                        {project.type} & Entertainment
+                      </div>
 
-                      {/* Center Section - Title */}
-                      <motion.div
-                        className="flex-1 flex items-center"
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: index * 0.05 + 0.2 }}
-                      >
-                        <div>
-                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 group-hover:text-primary transition-colors duration-300">
-                            {project.title}
-                          </h3>
+                      {/* Title - Large centered */}
+                      <h3 className="text-2xl md:text-3xl xl:text-4xl font-bold text-white/0 group-hover:text-white leading-tight mb-4 transition-all duration-500 delay-75">
+                        {project.title}
+                      </h3>
 
-                          {/* Location Badge - like in reference image */}
-                          <motion.div
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20"
-                            initial={{ x: -20, opacity: 0 }}
-                            whileHover={{
-                              x: 0,
-                              opacity: 1,
-                              backgroundColor: "rgba(255,255,255,0.15)",
-                            }}
-                            transition={{ delay: index * 0.05 + 0.3 }}
-                          >
-                            <span className="text-white text-sm font-medium">
-                              {project.location}
-                            </span>
-                          </motion.div>
-                        </div>
-                      </motion.div>
-
-                      {/* Bottom Section - Pics Count */}
-                      <motion.div
-                        className="flex items-center justify-between"
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: index * 0.05 + 0.4 }}
-                      >
-                        <span className="text-sm text-white/70 uppercase tracking-wider">
-                          {project.pics}
-                        </span>
-
-                        {/* Arrow indicator on hover */}
-                        <motion.div
-                          className="w-10 h-10 flex items-center justify-center"
-                          initial={{ opacity: 0, x: -10 }}
-                          whileHover={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <svg
-                            className="w-6 h-6 text-white"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                          </svg>
-                        </motion.div>
-                      </motion.div>
+                      {/* Location Badge - Bordered box */}
+                      <div className="inline-block px-4 py-2 border-2 border-white/0 group-hover:border-white/80 text-white/0 group-hover:text-white text-sm font-medium transition-all duration-500 delay-100">
+                        {project.location}
+                      </div>
                     </div>
 
-                    {/* Hover Border Effect */}
-                    <motion.div
-                      className="absolute inset-0 border-2 border-primary pointer-events-none"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    {/* Bottom Info - Pics count */}
+                    <div className="absolute bottom-6 left-6 text-xs text-white/0 group-hover:text-white/80 uppercase tracking-wider transition-all duration-500 delay-150">
+                      {project.pics}
+                    </div>
 
-                    {/* Corner Accent - Top Right */}
-                    <motion.div
-                      className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-white/20"
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3 }}
-                      style={{ transformOrigin: "top right" }}
-                    />
-
-                    {/* Corner Accent - Bottom Left */}
-                    <motion.div
-                      className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-white/20"
-                      initial={{ opacity: 0, scale: 0 }}
-                      whileHover={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: 0.05 }}
-                      style={{ transformOrigin: "bottom left" }}
-                    />
-
-                    {/* Status Badge - Bottom Right Corner */}
-                    <motion.div
-                      className="absolute bottom-6 right-6"
-                      initial={{ opacity: 0, y: 10 }}
-                      whileHover={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
+                    {/* Status Badge - Top right, only on hover */}
+                    <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <span
-                        className={`px-3 py-1 text-xs font-bold uppercase tracking-wider backdrop-blur-sm ${
+                        className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider ${
                           project.status === "Completed"
-                            ? "bg-emerald-500/90 text-white"
+                            ? "bg-emerald-500 text-white"
                             : project.status === "In Progress"
-                            ? "bg-amber-500/90 text-white"
-                            : "bg-slate-500/90 text-white"
+                            ? "bg-amber-500 text-white"
+                            : "bg-slate-500 text-white"
                         }`}
                       >
                         {project.status}
                       </span>
-                    </motion.div>
+                    </div>
                   </motion.div>
                 ))}
               </AnimatePresence>
