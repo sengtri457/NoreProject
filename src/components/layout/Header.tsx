@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Team", href: "/team" },
   { label: "Contact", href: "/contact" },
@@ -54,23 +54,6 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <Link
-          to="/contact"
-          className="hidden lg:flex items-center gap-2 px-6 py-3 bg-foreground text-background text-sm font-semibold tracking-wide hover:bg-primary transition-colors duration-300"
-        >
-          Start a Project
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
 
         {/* Mobile Menu Button */}
         <button

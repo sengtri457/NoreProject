@@ -6,23 +6,23 @@ import { StaggerContainer, StaggerItem } from '../animations/ScrollReveal';
 const values = [
   {
     icon: 'blueprint' as const,
-    title: 'Precision Engineering',
-    description: 'Every detail is meticulously planned and executed with mathematical precision.',
+    title: 'Safety',
+    description: 'We are always prioritizing the health and well-being of all employees and management team above all else.',
   },
   {
     icon: 'compass' as const,
-    title: 'Design Excellence',
-    description: 'We push boundaries to create spaces that are both beautiful and functional.',
+    title: 'High Quality',
+    description: 'We continuously improve our work and are committed to providing high-quality projects to ensure customer satisfaction.',
   },
   {
     icon: 'structure' as const,
-    title: 'Structural Integrity',
-    description: 'Our buildings are engineered to stand the test of time and nature.',
+    title: 'Collaboration / Teamwork',
+    description: 'We build strong relationships with clients, vendors, and partners to achieve common goals.',
   },
   {
     icon: 'precision' as const,
-    title: 'Sustainable Vision',
-    description: 'Environmental responsibility is woven into every design decision we make.',
+    title: ' Accountability',
+    description: 'We take full ownership of actions, decisions, and outcomes, ensuring projects meet agreed-upon timelines and budgets.',
   },
 ];
 

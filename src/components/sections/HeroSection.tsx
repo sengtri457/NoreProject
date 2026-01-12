@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-architecture.jpg";
+import heroImage from "@/assets/hero.jpg";
 import { TextReveal, TextRevealByWord } from "../animations/TextReveal";
 import { MagneticButton } from "../animations/MagneticButton";
 import { Link } from "react-router-dom";
@@ -67,7 +67,7 @@ export const HeroSection = () => {
 
         {/* Subheading */}
         <TextReveal delay={0.6}>
-          <p className="body-large max-w-xl mb-8 md:mb-10">
+          <p className="body-large max-w-xl mb-8 md:mb-10 text-white/90">
             Transforming visionary concepts into architectural masterpieces that
             stand the test of time through innovation and precision.
           </p>
@@ -75,30 +75,39 @@ export const HeroSection = () => {
 
         {/* CTAs */}
         <motion.div
-          className="flex flex-wrap gap-4"
+          className="flex flex-wrap items-center gap-5"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
           <Link to="/projects">
-            <MagneticButton variant="primary" className="breathing">
+            <MagneticButton
+              variant="primary"
+              className="breathing px-7 py-4 text-sm tracking-wide"
+            >
               View Our Work
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
             </MagneticButton>
           </Link>
+
           <Link to="/contact">
-            <MagneticButton variant="ghost">Start a Project</MagneticButton>
+            <MagneticButton
+              variant="ghost"
+               className="
+                  px-7 py-4
+                  text-sm tracking-wide
+                  bg-white text-background
+                  border border-white
+                  hover:bg-white
+                  hover:text-primary
+                  transition-colors duration-300
+                "
+            >
+              Contact Us
+            </MagneticButton>
           </Link>
-        </motion.div>
+
+            </motion.div>
+
       </motion.div>
 
       {/* Scroll Indicator */}
@@ -108,15 +117,16 @@ export const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
       >
-        <span className="text-xs tracking-widest uppercase text-muted-foreground">
+        <span className="text-xs tracking-widest uppercase text-muted-foreground text-white">
           Scroll
         </span>
         <motion.div
-          className="w-px h-12 bg-gradient-to-b from-primary to-transparent"
-          animate={{ scaleY: [0, 1, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "top" }}
-        />
+            className="w-px h-12 bg-gradient-to-b from-white to-transparent"
+            animate={{ scaleY: [0, 1, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            style={{ transformOrigin: "top" }}
+          />
+
       </motion.div>
     </section>
   );
