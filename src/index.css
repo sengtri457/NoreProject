@@ -8,6 +8,7 @@
   :root {
     /* Core architectural palette - Light Mode */
     --background: 0 0% 98%;
+    --backgroundsecondary: 220 20% 96%;
     --foreground: 220 52% 15%;
 
     --card: 0 0% 100%;
@@ -60,12 +61,35 @@
     /* Animation timing */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+    /* Accent - Corporate Gold */
+    --accent: 45 80% 50%;
+    --accent-foreground: 220 60% 15%;
+
+    /* States */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    /* Borders & Input */
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 222 65% 22%;
+
+    --radius: 0.375rem;
+    /* Chart Colors */
+    --chart-node: 222 65% 22%;
+    --chart-node-light: 220 50% 45%;
+    --chart-line: 220 30% 75%;
   }
 
   .dark {
     --background: 0 0% 4%;
     --foreground: 220 52% 85%;
+    --border: 222 30% 25%;
+    --input: 222 30% 25%;
+    --ring: 220 60% 60%;
 
+    --chart-node: 220 60% 60%;
+    --chart-node-light: 220 50% 70%;
+    --chart-line: 220 30% 50%;
     --card: 220 15% 8%;
     --card-foreground: 220 52% 85%;
 

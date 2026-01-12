@@ -9,36 +9,6 @@ import useLenis from "../hooks/useLenis";
 import heroImage from "@/assets/hero-architecture.jpg";
 import constructionTeam from "@/assets/project-2.jpg";
 
-const timeline = [
-  {
-    year: "1999",
-    title: "Founded",
-    description:
-      "Atelier was established with a vision to redefine architectural excellence.",
-  },
-  {
-    year: "2005",
-    title: "First Major Project",
-    description:
-      "Completed the landmark Meridian Tower, our first iconic skyscraper.",
-  },
-  {
-    year: "2012",
-    title: "International Expansion",
-    description: "Opened offices in London, Dubai, and Singapore.",
-  },
-  {
-    year: "2020",
-    title: "Sustainability Focus",
-    description: "Launched our net-zero carbon initiative across all projects.",
-  },
-  {
-    year: "2024",
-    title: "Innovation Hub",
-    description: "Opened our R&D center for sustainable building technologies.",
-  },
-];
-
 const aboutContent = [
   {
     id: "overview",
@@ -69,37 +39,6 @@ const coreServices = [
     title: "Architectural Design",
     description:
       "Developing functional design solutions for diverse building projects, utilizing advanced CAD software to produce detailed architectural plans and 3D renderings.",
-  },
-];
-
-const coreValues = [
-  {
-    icon: "🛡️",
-    title: "Safety",
-    description:
-      "We prioritize the health and well-being of all employees and management team above all else.",
-    image: constructionTeam,
-  },
-  {
-    icon: "⭐",
-    title: "High Quality",
-    description:
-      "We continuously improve our work and provide high-quality projects to ensure customer satisfaction.",
-    image: constructionTeam,
-  },
-  {
-    icon: "🤝",
-    title: "Collaboration",
-    description:
-      "We build strong relationships with clients, vendors, and partners to achieve common goals.",
-    image: constructionTeam,
-  },
-  {
-    icon: "📋",
-    title: "Accountability",
-    description:
-      "We take full ownership of actions, decisions, and outcomes, ensuring projects meet timelines and budgets.",
-    image: constructionTeam,
   },
 ];
 
@@ -167,9 +106,18 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="relative aspect-[4/5] lg:aspect-square sticky top-24">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative aspect-[4/5] lg:aspect-square sticky top-24"
+            >
               <div className="absolute inset-0 bg-primary translate-x-6 translate-y-6 -z-10 rounded-md" />
-              <ImageReveal src={heroImage} alt="Atelier studio" className="w-full h-full relative z-10 rounded-md shadow-lg" />
+              <ImageReveal
+                src={heroImage}
+                alt="Atelier studio"
+                className="w-full h-full relative z-10 rounded-md shadow-lg"
+              />
             </motion.div>
           </div>
         </section>

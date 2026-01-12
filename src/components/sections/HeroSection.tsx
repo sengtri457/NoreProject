@@ -36,7 +36,7 @@ export const HeroSection = () => {
           transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-blue-to-b from-background/60 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/40 to-primary/20" />
       </motion.div>
 
       {/* Content */}
@@ -92,7 +92,7 @@ export const HeroSection = () => {
           <Link to="/contact">
             <MagneticButton
               variant="ghost"
-               className="
+              className="
                   px-7 py-4
                   text-sm tracking-wide
                   bg-white text-background
@@ -105,9 +105,7 @@ export const HeroSection = () => {
               Contact Us
             </MagneticButton>
           </Link>
-
-            </motion.div>
-
+        </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}
@@ -121,12 +119,11 @@ export const HeroSection = () => {
           Scroll
         </span>
         <motion.div
-            className="w-px h-12 bg-gradient-to-b from-white to-transparent"
-            animate={{ scaleY: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            style={{ transformOrigin: "top" }}
-          />
-
+          className="w-px h-12 bg-gradient-to-b from-white to-transparent"
+          animate={{ scaleY: [0, 1, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          style={{ transformOrigin: "top" }}
+        />
       </motion.div>
     </section>
   );
