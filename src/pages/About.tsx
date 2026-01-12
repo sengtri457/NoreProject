@@ -22,36 +22,6 @@ import {
   HiClipboardDocumentCheck 
 } from "react-icons/hi2";
 
-const timeline = [
-  {
-    year: "1999",
-    title: "Founded",
-    description:
-      "Atelier was established with a vision to redefine architectural excellence.",
-  },
-  {
-    year: "2005",
-    title: "First Major Project",
-    description:
-      "Completed the landmark Meridian Tower, our first iconic skyscraper.",
-  },
-  {
-    year: "2012",
-    title: "International Expansion",
-    description: "Opened offices in London, Dubai, and Singapore.",
-  },
-  {
-    year: "2020",
-    title: "Sustainability Focus",
-    description: "Launched our net-zero carbon initiative across all projects.",
-  },
-  {
-    year: "2024",
-    title: "Innovation Hub",
-    description: "Opened our R&D center for sustainable building technologies.",
-  },
-];
-
 const aboutContent = [
   {
     id: "overview",
@@ -115,7 +85,6 @@ const coreValues = [
     image: project4,
   },
 ];
-
 const About = () => {
   useLenis();
   const [activeTab, setActiveTab] = useState("overview");
@@ -196,30 +165,29 @@ const About = () => {
                 className="w-full h-full relative z-10 rounded-md shadow-lg"
               />
 
-                {/* Download Button */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20"
+              {/* Download Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20"
+              >
+                <Button
+                  asChild
+                  size="lg"
+                  className="shadow-lg hover:shadow-xl transition-all duration-300 bg-secondary text-secondary-foreground"
                 >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="shadow-lg hover:shadow-xl transition-all duration-300 bg-secondary text-secondary-foreground"
+                  <a
+                    href="/company-profile.pdf"
+                    download
+                    className="flex items-center gap-2"
                   >
-                    <a
-                      href="/company-profile.pdf"
-                      download
-                      className="flex items-center gap-2"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download Company Profile
-                    </a>
-                  </Button>
-                </motion.div>
+                    <Download className="w-4 h-4" />
+                    Download Company Profile
+                  </a>
+                </Button>
               </motion.div>
-
+            </motion.div>
           </div>
         </section>
 
