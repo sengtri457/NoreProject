@@ -8,6 +8,9 @@ import {
 } from "../components/animations/TextReveal";
 import { ScrollReveal } from "../components/animations/ScrollReveal";
 import useLenis from "../hooks/useLenis";
+import { FaInstagram, FaTiktok, FaYoutube, FaBehance, FaPinterest, FaTelegram, FaGlobe } from "react-icons/fa";
+import { AiOutlineGlobal } from "react-icons/ai"; // optional alternative for website/global
+
 
 // Import your QR code image here - replace with your actual image path
 // import qrCodeImage from '../assets/qr-code.png';
@@ -353,43 +356,44 @@ const Contact = () => {
                   </motion.div>
 
                   {/* Social Media */}
-                  <motion.div
-                    className="pt-10 border-t border-border"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <h3 className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">
-                      Follow Us
-                    </h3>
-                    <div className="flex flex-wrap gap-4">
-                      {[
-                        { icon: "🌐", label: "Website" },
-                        { icon: "📷", label: "Instagram" },
-                        { icon: "🎵", label: "TikTok" },
-                        { icon: "▶️", label: "YouTube" },
-                        { icon: "🎨", label: "Behance" },
-                        { icon: "📌", label: "Pinterest" },
-                        { icon: "✈️", label: "Telegram" },
-                        { icon: "🌍", label: "Global" },
-                      ].map((social, i) => (
-                        <motion.a
-                          key={i}
-                          href="#"
-                          className="w-12 h-12 rounded-lg bg-primary/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center text-xl transition-colors"
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          whileTap={{ scale: 0.95 }}
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.6 + i * 0.05 }}
-                          title={social.label}
-                        >
-                          {social.icon}
-                        </motion.a>
-                      ))}
-                    </div>
-                  </motion.div>
+{/* Social Media */}
+<motion.div
+  className="pt-10 border-t border-border"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.5 }}
+>
+  <h3 className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">
+    Follow Us
+  </h3>
+  <div className="flex flex-wrap gap-4">
+    {[
+      { icon: <AiOutlineGlobal />, label: "Website", href: "#", color: "#000000" }, // black or your site color
+      { icon: <FaInstagram />, label: "Instagram", href: "#", color: "#E1306C" },
+      { icon: <FaTiktok />, label: "TikTok", href: "#", color: "#010101" },
+      { icon: <FaYoutube />, label: "YouTube", href: "#", color: "#FF0000" },
+      { icon: <FaBehance />, label: "Behance", href: "#", color: "#1769FF" },
+      { icon: <FaPinterest />, label: "Pinterest", href: "#", color: "#E60023" },
+      { icon: <FaTelegram />, label: "Telegram", href: "#", color: "#0088CC" },
+    ].map((social, i) => (
+      <motion.a
+        key={i}
+        href={social.href}
+        className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-xl transition-colors"
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.6 + i * 0.05 }}
+        title={social.label}
+        style={{ color: social.color }} // sets the icon color to brand color
+      >
+        {social.icon}
+      </motion.a>
+    ))}
+  </div>
+</motion.div>
                 </div>
               </ScrollReveal>
             </div>

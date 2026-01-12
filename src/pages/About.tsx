@@ -167,18 +167,9 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative aspect-[4/5] lg:aspect-square sticky top-24"
-            >
+            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="relative aspect-[4/5] lg:aspect-square sticky top-24">
               <div className="absolute inset-0 bg-primary translate-x-6 translate-y-6 -z-10 rounded-md" />
-              <ImageReveal
-                src={heroImage}
-                alt="Atelier studio"
-                className="w-full h-full relative z-10 rounded-md shadow-lg"
-              />
+              <ImageReveal src={heroImage} alt="Atelier studio" className="w-full h-full relative z-10 rounded-md shadow-lg" />
             </motion.div>
           </div>
         </section>
