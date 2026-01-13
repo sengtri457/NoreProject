@@ -11,6 +11,8 @@ import ScrollToTop from "@/components/ui/ScrollToTop";
 import Projects from "./Projects";
 import CEOStatement from "./CEOStatement";
 import OrganizationChart from "./OrganizationChart";
+import Team from "./Team";
+import BusinessLicense from "./BusinessLicense";
 
 const Index = () => {
   // Initialize smooth scrolling
@@ -25,8 +27,10 @@ const Index = () => {
         <ValuesSection />
         <Projects />
         <CEOStatement />
-        <OrganizationChart />
+        {/* <OrganizationChart /> */}
         <CTASection />
+        <Team />
+        <BusinessLicense />
         <Contact />
       </main>
       <Footer />
