@@ -29,7 +29,7 @@ const footerLinks = {
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-primary text-primary-foreground border-t border-primary/40 overflow-hidden">
+    <footer className="relative bg-primary dark:bg-zinc-950 text-primary-foreground border-t border-primary/40 dark:border-white/10 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid opacity-10" />
       

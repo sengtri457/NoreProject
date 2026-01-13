@@ -23,10 +23,7 @@ export const HeroSection = () => {
       className="relative h-screen overflow-hidden bg-background"
     >
       {/* Background Image with Scale and Drift */}
-      <motion.div
-        className="absolute inset-0"
-        style={{ scale: imageScale, x: imageX }}
-      >
+      <motion.div className="absolute inset-0" style={{ scale: imageScale, x: imageX }}>
         <motion.img
           src={heroImage}
           alt="Modern architecture"
@@ -36,7 +33,7 @@ export const HeroSection = () => {
           transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/40 to-primary/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/20 dark:from-black/80 dark:via-black/60 dark:to-black/40" />
       </motion.div>
 
       {/* Content */}
@@ -54,14 +51,14 @@ export const HeroSection = () => {
         {/* Main Heading */}
         <div className="mb-6 md:mb-8">
           <TextRevealByWord
-            text="We Design Spaces"
-            className="heading-display text-foreground"
-            wordClassName="text-foreground"
+            text="WE BUILD"
+            className="heading-display text-white"
+            wordClassName="text-white"
           />
           <TextRevealByWord
-            text="That Inspire"
-            className="heading-display text-primary"
-            wordClassName="text-primary"
+            text="THE FUTURE"
+            className="heading-display text-primary dark:text-primary"
+            wordClassName="text-primary dark:text-primary"
           />
         </div>
 
@@ -83,9 +80,9 @@ export const HeroSection = () => {
           <Link to="/projects">
             <MagneticButton
               variant="primary"
-              className="breathing px-7 py-4 text-sm tracking-wide"
+              className="breathing px-7 py-4 text-sm tracking-wide bg-primary text-primary-foreground border-none hover:bg-primary/90"
             >
-              View Our Work
+              EXPLORE OUR WORK
             </MagneticButton>
           </Link>
 
@@ -93,16 +90,17 @@ export const HeroSection = () => {
             <MagneticButton
               variant="ghost"
               className="
-                  px-7 py-4
-                  text-sm tracking-wide
-                  bg-white text-background
-                  border border-white
-                  hover:bg-white
-                  hover:text-primary
-                  transition-colors duration-300
-                "
+                px-7 py-4
+                text-sm tracking-wide
+                bg-transparent text-white
+                border border-white/30
+                hover:bg-white/10
+                hover:border-white
+                hover:text-white
+                transition-all duration-300
+              "
             >
-              Contact Us
+              CONTACT US
             </MagneticButton>
           </Link>
         </motion.div>

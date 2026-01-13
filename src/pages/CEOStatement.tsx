@@ -80,9 +80,9 @@ const CEOStatement = () => {
                   </motion.div>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Our expansion is rooted in unwavering integrity, diligence,
-                    and a steadfast resolve to surpass client expectations. As
-                    we advance, we remain committed to delivering superior
-                    construction standards through engineering innovation and an
+                and a steadfast resolve to surpass client expectations. As
+                we advance, we remain committed to delivering superior
+                construction standards through engineering innovation and an
                     uncompromising focus on safety. While we take pride in our
                     history, we are driven by the opportunity to shape the
                     sustainable communities of tomorrow.

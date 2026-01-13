@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Phone, Mail, MapPin, Briefcase, Facebook, Linkedin, Instagram } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
   Sheet,
   SheetContent,
@@ -80,13 +81,13 @@ const MagneticNavLink = ({ label, href }: { label: string; href: string }) => {
               animate={
                 isHovered
                   ? {
-                      y: [0, -3, 2, -2, 1, 0],
-                      rotate: [0, -2, 1, -1, 0.5, 0],
-                    }
+                    y: [0, -3, 2, -2, 1, 0],
+                    rotate: [0, -2, 1, -1, 0.5, 0],
+                  }
                   : {
-                      y: 0,
-                      rotate: 0,
-                    }
+                    y: 0,
+                    rotate: 0,
+                  }
               }
               transition={{
                 delay: i * 0.03,
@@ -103,7 +104,7 @@ const MagneticNavLink = ({ label, href }: { label: string; href: string }) => {
 
         {/* Simple animated underline */}
         <motion.span
-          className="absolute left-0 -bottom-1 h-px w-full origin-left bg-white"
+          className="absolute left-0 -bottom-1 h-px w-full origin-left bg-secondary"
           initial={{ scaleX: 0 }}
           animate={isHovered ? { scaleX: 1 } : { scaleX: 0 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -117,10 +118,23 @@ const MagneticNavLink = ({ label, href }: { label: string; href: string }) => {
 export const Header = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-primary/80"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "backdrop-blur-md bg-primary/80 dark:bg-background/95 border-b border-transparent dark:border-white/10 shadow-sm"
+        : "bg-transparent border-transparent"
+        }`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -168,11 +182,12 @@ export const Header = () => {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-3">
+          <ModeToggle />
           {/* Contact Info Button */}
           <Sheet>
             <SheetTrigger asChild>
               <motion.button
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-secondary transition-all duration-300 text-white hover:text-secondary"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 bg-primary hover:bg-primary/90 hover:border-primary transition-all duration-300 text-primary-foreground"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -301,11 +316,12 @@ export const Header = () => {
 
         {/* Mobile Actions */}
         <div className="lg:hidden flex items-center gap-3">
+          <ModeToggle />
           {/* Contact Info Button - Mobile */}
           <Sheet>
             <SheetTrigger asChild>
               <motion.button
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-secondary transition-all duration-300 text-white hover:text-secondary"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 bg-primary hover:bg-primary/90 hover:border-primary transition-all duration-300 text-primary-foreground"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -431,7 +447,7 @@ export const Header = () => {
             </SheetContent>
           </Sheet>
 
-            <button
+          <button
             className="w-10 h-10 flex flex-col items-center justify-center gap-1.5"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
